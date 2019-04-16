@@ -1,47 +1,73 @@
 # 100Day-ML-Marathon
-
 ## 環境架設(Windows 10)
-
 ...
 ## 環境架設(Linux_x64)
-
 ### 系統設定
-
 #### 將home資料夾英文化(方便使用cd切換)
-
 `LANG=C xdg-user-dirs-gtk-update`
-
 #### 更改開機grub等待時間
-
 `sudo nano /etc/default/grub`
-
+將下列GRUB_TIMEOUT改成你所希望的秒數
+```sh
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+```
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+‵‵‵
+重新生成 /boot/grub/grub.cfg
 `sudo update-grub`
 
-`nvidia` `docker` `nvidia-docker`
-### nvidia
+
+#user file name set
+LANG=C xdg-user-dirs-gtk-update
+
+#start up delay time set
+sudo nano /etc/default/grub
+
+sudo update-grub
+
+#### 雙系統時間同步
+`timedatectl set-local-rtc 1 --adjust-system-clock`
+
+#### Java安裝：
+`sudo apt-get install -y default-jre‵
+
+#### 中文輸入法：
+‵sudo apt-get install -y gcin`
+
+#### 更新與刪除軟體：
+`sudo apt-get upgrade`
+`sudo apt autoremove`
+
+
+
+### nvidia driver
 
 移除舊版後安新版，如果linux為桌面板且顯示卡沒有照成linux當機的問題(顯示卡過新)，建議手動安裝
+`sudo apt-get remove --purge nvidia*`
 
-原先做法：
+原先安裝法：
 ```sh
-sudo apt-get remove --purge nvidia*
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
 
 #nvidia-{version}
 sudo apt-get install -y nvidia-driver-418
 ```
-待測試：
+待測安裝法：
 ```sh
 ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
 ```
+
 重開機後驗證：
 ```sh
-# reboot your system
 sudo reboot
 
-# check install
 nvidia-smi
 ```
 
@@ -84,50 +110,14 @@ docker container prune
 ```
 
 ### [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
-
-latest-gpu-py3-jupyter
-
-
-
-
-#user file name set
-LANG=C xdg-user-dirs-gtk-update
-
-#start up delay time set
-sudo nano /etc/default/grub
-
-sudo update-grub
-
-#two system time sync
-timedatectl set-local-rtc 1 --adjust-system-clock
-
-
-#nvidia driver
-sudo apt-get remove --purge nvidia*
-sudo add-apt-repository ppa:graphics-drivers/ppa
-
+```sh
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
+  sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
-#nvidia-{version}
-sudo apt-get install -y nvidia-driver-418
-sudo reboot
-nvidia-smi
 
-
-#java
-sudo apt-get install -y default-jre
-
-#taiwanese input
-sudo apt-get install -y gcin
-
-#mouse key set
-#xev
-sudo apt-get install -y xbindkeys xbindkeys-config xautomation
-
-xbindkeys-config
-#b:9    xte 'key Page_Up'
-#b:8    xte 'key Page_Down'
-
-
-
-sudo apt-get upgrade
-sudo apt autoremove
+sudo apt-get install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+```

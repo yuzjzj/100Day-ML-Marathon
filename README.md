@@ -7,17 +7,17 @@
 `LANG=C xdg-user-dirs-gtk-update`
 #### 更改開機grub等待時間
 `sudo nano /etc/default/grub`
-將下列GRUB_TIMEOUT改成你所希望的秒數
+
+將下列GRUB_TIMEOUT改成你所希望的秒數，Ctrl+S後Ctrl+X離開。
 ```sh
 # If you change this file, run 'update-grub' afterwards to update
 # /boot/grub/grub.cfg.
 # For full documentation of the options in this file, see:
 #   info -f grub -n 'Simple configuration'
-```
 GRUB_DEFAULT=0
 GRUB_TIMEOUT_STYLE=hidden
 GRUB_TIMEOUT=10
-‵‵‵
+```
 重新生成 /boot/grub/grub.cfg
 `sudo update-grub`
 

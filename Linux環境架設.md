@@ -115,3 +115,8 @@ sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
+
+## [Git](https://git-scm.com/download/linux)
+原先似乎就有預裝Git了，但不確定可以再試試看。
+
+`sudo apt-get install git`

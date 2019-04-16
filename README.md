@@ -19,25 +19,19 @@ GRUB_TIMEOUT_STYLE=hidden
 GRUB_TIMEOUT=10
 ```
 重新生成 /boot/grub/grub.cfg
+
 `sudo update-grub`
 
-
-#user file name set
-LANG=C xdg-user-dirs-gtk-update
-
-#start up delay time set
-sudo nano /etc/default/grub
-
-sudo update-grub
-
-#### 雙系統時間同步
+#### 雙系統時間同步：
 `timedatectl set-local-rtc 1 --adjust-system-clock`
 
 #### Java安裝：
-`sudo apt-get install -y default-jre‵
+
+`sudo apt-get install -y default-jre`
 
 #### 中文輸入法：
-‵sudo apt-get install -y gcin`
+
+`sudo apt-get install -y gcin`
 
 #### 更新與刪除軟體：
 `sudo apt-get upgrade`

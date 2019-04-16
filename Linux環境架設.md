@@ -21,18 +21,18 @@ GRUB_TIMEOUT=10
 
 `sudo update-grub`
 
-   ### 雙系統時間同步：
+   ###   雙系統時間同步：
 `timedatectl set-local-rtc 1 --adjust-system-clock`
 
-   ### Java安裝：
+   ###   Java安裝：
 
 `sudo apt-get install -y default-jre`
 
-   ### 中文輸入法：
+   ###   中文輸入法：
 
 `sudo apt-get install -y gcin`
 
-   ### 更新與刪除軟體：
+   ###   更新與刪除軟體：
 `sudo apt-get upgrade`
 `sudo apt autoremove`
 
@@ -81,12 +81,12 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 # check install
 sudo docker run --rm hello-world
 ```
-   ### 改docker權限
+   ###   改docker權限
 ```sh
 sudo groupadd docker
 sudo gpasswd -a $USER docker
 ```
-   ### 備忘
+   ###   備忘
 ```sh
 #images list
 sudo docker images

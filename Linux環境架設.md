@@ -38,7 +38,7 @@ GRUB_TIMEOUT=10
 
 
 
-## nvidia driver
+## Nvidia driver
 
    移除舊版後安新版，如果linux為桌面板且顯示卡沒有照成linux當機的問題(顯示卡過新)，建議手動安裝。
 
@@ -66,7 +66,7 @@ nvidia-smi
 ```
 
 ## docker
-### [install](https://docs.docker.com/install/)：
+### [install](https://docs.docker.com/install/)
 ```sh
 #install docker https://docs.docker.com/install/
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -103,7 +103,7 @@ sudo docker container rm
 docker container prune
 ```
 
-## [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)：
+## [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 ```sh
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
   sudo apt-key add -

@@ -24,7 +24,7 @@ conda update conda
 
 建立環境100D
 conda env create -n 100D -f Py36env-GPU.yml
-conda create -n 100D
+conda create --name 100D python=3
 
 進入環境100D
 activate 100D

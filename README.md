@@ -1,15 +1,22 @@
 # 100Day-ML-Marathon
 ## 環境架設
-[Linux_x64](https://github.com/yuzjzj/100Day-ML-Marathon/blob/master/%E7%92%B0%E5%A2%83%E6%9E%B6%E8%A8%ADLinux.md)(使用Docker做環境管理)
+[Linux_x64](https://github.com/yuzjzj/100Day-ML-Marathon/blob/master/%E7%92%B0%E5%A2%83%E6%9E%B6%E8%A8%ADLinux.md)
 
-[windows 10](https://github.com/yuzjzj/100Day-ML-Marathon/blob/master/%E7%92%B0%E5%A2%83%E6%9E%B6%E8%A8%ADWin10.md)(因家用版無Hyper-V功能無法使用Docker，所以使用Miniconda做環境管理)
+使用Docker做環境管理
+
+[windows 10](https://github.com/yuzjzj/100Day-ML-Marathon/blob/master/%E7%92%B0%E5%A2%83%E6%9E%B6%E8%A8%ADWin10.md)
+
+因家用版無Hyper-V功能無法使用Docker，所以使用Miniconda做環境管理
 ## 套件安裝
 Linux_x64
 (dockerfile)
 
 windows 10(Anaconda / Miniconda)
+
 miniconda相較於anaconda輕巧許多，而相對的所需套件也要自己安裝。
+
 請以右鍵"以系統管理員執行"新增以下套件：(確認環境是否必須切換)
+
 conda install jupyter numpy pandas requests scikit-image PIL ...(隨課程新增)
 
 ## 資料同步(Git設定)

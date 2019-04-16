@@ -10,7 +10,7 @@ Linux_x64
 windows 10(Anaconda / Miniconda)
 miniconda相較於anaconda輕巧許多，而相對的所需套件也要自己安裝。
 請以右鍵"以系統管理員執行"新增以下套件：(確認環境是否必須切換)
-conda install numpy pandas jupyter requests ...(隨課程新增)
+conda install jupyter numpy pandas requests scikit-image PIL ...(隨課程新增)
 
 ## 資料同步(Git設定)
 ### 初始設定

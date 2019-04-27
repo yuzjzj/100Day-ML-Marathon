@@ -4,3 +4,6 @@ pandas
 requests
 scikit-image
 pillow
+statsmodels
+collections
+seaborn

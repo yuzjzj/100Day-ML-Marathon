@@ -1,9 +1,9 @@
-jupyter
-numpy
-pandas
-requests
-scikit-image
-pillow
-statsmodels
-collections
+sklearn
 seaborn
+scikit-image
+statsmodels
+pillow
+requests
+pandas
+numpy
+jupyter

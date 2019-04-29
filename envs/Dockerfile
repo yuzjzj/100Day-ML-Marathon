@@ -7,6 +7,10 @@
 # Base image to tensorflow/tensorflow:latest-gpu-py3-jupyter
 FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
 
-RUN pip install -r requirements.txt
+COPY requirements.txt /tf/
 
-CMD jupyter notebook --ip=127.0.0.2 --allow-root
+RUN pip install --upgrade pip \
+ && pip install -r requirements.txt
+
+CMD hostname=$(hostname -i) \
+ && jupyter notebook --ip=$hostname --allow-root

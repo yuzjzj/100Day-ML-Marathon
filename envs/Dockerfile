@@ -12,5 +12,4 @@ COPY requirements.txt /tf/
 RUN pip install --upgrade pip \
  && pip install -r requirements.txt
 
-CMD hostname=$(hostname -i) \
- && jupyter notebook --ip=$hostname --allow-root
+CMD jupyter notebook --ip=$(hostname -i) --allow-root

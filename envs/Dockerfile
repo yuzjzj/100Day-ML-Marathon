@@ -1,5 +1,5 @@
 ###############################
-# Dockerfile build ruby
+# Dockerfile build python
 # in tensorflow/tensorflow:latest-gpu-py3-jupyter
 #docker run --name 100D --rm -v /windows/workspace/100Day-ML-Marathon:/tf -p 80:8888 --runtime=nvidia tensorflow/tensorflow:latest-gpu-py3-jupyter
 ###############################

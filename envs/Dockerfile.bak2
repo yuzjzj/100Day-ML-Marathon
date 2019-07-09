@@ -1,0 +1,15 @@
+###############################
+# Dockerfile build python
+# in tensorflow/tensorflow:latest-gpu-py3-jupyter
+#docker run --name 100D --rm -v /windows/workspace/100Day-ML-Marathon:/tf -p 80:8888 --runtime=nvidia tensorflow/tensorflow:latest-gpu-py3-jupyter
+###############################
+
+# Base image to python
+FROM python
+
+COPY requirements.txt .
+
+RUN pip install --upgrade pip \
+ && pip install -r requirements.txt
+
+CMD cd tf/ && jupyter notebook --ip=$(hostname -i) --allow-root

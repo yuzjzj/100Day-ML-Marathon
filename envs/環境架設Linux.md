@@ -119,4 +119,9 @@ sudo pkill -SIGHUP dockerd
 docker build -t 100d:v1 .
 
 
+jupyter notebook --generate-config
+jupyter notebook password
+
+
+
 `sudo apt-get install git`

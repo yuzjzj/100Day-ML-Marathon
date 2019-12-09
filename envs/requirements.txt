@@ -1,10 +1,5 @@
-sklearn
 seaborn
 scikit-image
 statsmodels
 pillow
-requests
-pandas
-numpy
-jupyter
-mlxtend
+keras
